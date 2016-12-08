@@ -1,14 +1,36 @@
-GetNewFactIntent ein Faktum
-GetNewFactIntent ein Faktum über den Weltraum
-GetNewFactIntent sage mir ein Faktum
-GetNewFactIntent sage mir ein Faktum über den Weltraum
-GetNewFactIntent gib mir ein Faktum
-GetNewFactIntent gib mir ein Faktum über den Weltraum
+GetNewFactIntent ein Fakt
+GetNewFactIntent ein Fakt über Stonehenge
+GetNewFactIntent sage mir ein Fakt
+GetNewFactIntent sage mir ein Fakt über Stonehenge
+GetNewFactIntent gib mir ein Fakt
+GetNewFactIntent gib mir ein Fakt über Stonehenge
 GetNewFactIntent erzähle mir Wissenswertes
-GetNewFactIntent erzähle mir Wissenswertes über den Weltraum
+GetNewFactIntent erzähle mir Wissenswertes über Stonehenge
 GetNewFactIntent sage mir etwas Wissenswertes
-GetNewFactIntent sage mir etwas wissenswertes über den Weltraum
+GetNewFactIntent sage mir etwas wissenswertes über Stonehenge
 GetNewFactIntent gib mir Informationen
-GetNewFactIntent gib mir Informationen über den Weltraum
+GetNewFactIntent gib mir Informationen über Stonehenge
 GetNewFactIntent sage mir etwas
 GetNewFactIntent erzähle mir etwas
+StartIntent Starte Stonehenge fakten
+StartIntent Beginne Stonehenge fakten
+StartIntent Öffne Stonehenge fakten
+StartIntent Lass uns anfangen
+StartIntent Fang an
+StartIntent Leg los
+StartIntent Start
+StopIntent Ich habe keine Lust mehr
+StopIntent Ende
+StopIntent Schluss
+StopIntent Das wars
+StopIntent Finito
+StopIntent Fertig
+StopIntent Hör auf
+StopIntent Ich möchte aufhören
+HelpIntent Hilfe
+HelpIntent Wie geht das
+HelpIntent Wie funktioniert das
+HelpIntent Was muss ich machen
+HelpIntent Erkläre mir wie das geht
+HelpIntent Erkläre mir wie das funktioniert
+HelpIntent Und nun

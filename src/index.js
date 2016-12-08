@@ -1,85 +1,43 @@
-'use strict';
-var Alexa = require('alexa-sdk');
-var APP_ID = undefined;  // TODO replace with your app ID (OPTIONAL).
+"use strict";
+var Alexa = require("alexa-sdk");
+var APP_ID = "amzn1.ask.skill.f308e73d-10a6-41e5-a81c-8a99bb65d8ab";
 
 var languageStrings = {
-    "en-GB": {
-        "translation": {
-            "FACTS": [
-                "A year on Mercury is just 88 days long.",
-                "Despite being farther from the Sun, Venus experiences higher temperatures than Mercury.",
-                "Venus rotates anti-clockwise, possibly because of a collision in the past with an asteroid.",
-                "On Mars, the Sun appears about half the size as it does on Earth.",
-                "Earth is the only planet not named after a god.",
-                "Jupiter has the shortest day of all the planets.",
-                "The Milky Way galaxy will collide with the Andromeda Galaxy in about 5 billion years.",
-                "The Sun contains 99.86% of the mass in the Solar System.",
-                "The Sun is an almost perfect sphere.",
-                "A total solar eclipse can happen once every 1 to 2 years. This makes them a rare event.",
-                "Saturn radiates two and a half times more energy into space than it receives from the sun.",
-                "The temperature inside the Sun can reach 15 million degrees Celsius.",
-                "The Moon is moving approximately 3.8 cm away from our planet every year."
-            ],
-            "SKILL_NAME" : "British Space Facts",
-            "GET_FACT_MESSAGE" : "Here's your fact: ",
-            "HELP_MESSAGE" : "You can say tell me a space fact, or, you can say exit... What can I help you with?",
-            "HELP_REPROMPT" : "What can I help you with?",
-            "STOP_MESSAGE" : "Goodbye!"
-        }
-    },
-    "en-US": {
-        "translation": {
-            "FACTS": [
-                "A year on Mercury is just 88 days long.",
-                "Despite being farther from the Sun, Venus experiences higher temperatures than Mercury.",
-                "Venus rotates counter-clockwise, possibly because of a collision in the past with an asteroid.",
-                "On Mars, the Sun appears about half the size as it does on Earth.",
-                "Earth is the only planet not named after a god.",
-                "Jupiter has the shortest day of all the planets.",
-                "The Milky Way galaxy will collide with the Andromeda Galaxy in about 5 billion years.",
-                "The Sun contains 99.86% of the mass in the Solar System.",
-                "The Sun is an almost perfect sphere.",
-                "A total solar eclipse can happen once every 1 to 2 years. This makes them a rare event.",
-                "Saturn radiates two and a half times more energy into space than it receives from the sun.",
-                "The temperature inside the Sun can reach 15 million degrees Celsius.",
-                "The Moon is moving approximately 3.8 cm away from our planet every year."
-            ],
-            "SKILL_NAME" : "American Space Facts",
-            "GET_FACT_MESSAGE" : "Here's your fact: ",
-            "HELP_MESSAGE" : "You can say tell me a space fact, or, you can say exit... What can I help you with?",
-            "HELP_REPROMPT" : "What can I help you with?",
-            "STOP_MESSAGE" : "Goodbye!"
-        }
-    },
     "de-DE": {
         "translation": {
             "FACTS": [
-                "Ein Jahr dauert auf dem Merkur nur 88 Tage.",
-                "Die Venus ist zwar weiter von der Sonne entfernt, hat aber höhere Temperaturen als Merkur.",
-                "Venus dreht sich entgegen dem Uhrzeigersinn, möglicherweise aufgrund eines früheren Zusammenstoßes mit einem Asteroiden.",
-                "Auf dem Mars erscheint die Sonne nur halb so groß wie auf der Erde.",
-                "Die Erde ist der einzige Planet, der nicht nach einem Gott benannt ist.",
-                "Jupiter hat den kürzesten Tag aller Planeten.",
-                "Die Milchstraßengalaxis wird in etwa 5 Milliarden Jahren mit der Andromeda-Galaxis zusammenstoßen.",
-                "Die Sonne macht rund 99,86 % der Masse im Sonnensystem aus.",
-                "Die Sonne ist eine fast perfekte Kugel.",
-                "Eine Sonnenfinsternis kann alle ein bis zwei Jahre eintreten. Sie ist daher ein seltenes Ereignis.",
-                "Der Saturn strahlt zweieinhalb mal mehr Energie in den Weltraum aus als er von der Sonne erhält.",
-                "Die Temperatur in der Sonne kann 15 Millionen Grad Celsius erreichen.",
-                "Der Mond entfernt sich von unserem Planeten etwa 3,8 cm pro Jahr."
+                "Stonehenge wurde in der Jungsteinzeit errichtet.",
+                "Stonehenge steht in der Nähe von Amesbury in Wiltshire, England, etwa 13 Kilometer nördlich von Salisbury.",
+                "Stonehenge besteht aus einer Grabenanlage, die von einer aus mehreren konzentrischen Steinkreisen gebildeten Megalithstruktur umgeben ist.",
+                "Weitere Megalithe sowie zwei Hügelgräber finden sich in unmittelbarer Nähe von Stonehenge.",
+                "Stonehenge war möglicherweise ein Kult- und Versammlungsplatz. Darauf weisen Symbole von Äxten und Muttergottheiten hin.",
+                "Stonehenge war möglicherweise eine religiöse Tempelanlage und Begräbnisstätte. Darauf weisen einzelne Funde hin.",
+                "Stonehenge war möglicherweise ein astronomisches Observatorium, weil einige Linien nach der Sommersonnenwende ausgerichtet sind.",
+                "Die Entstehung der Anlage lässt sich grob in drei Phasen unterteilen: Die Frühphase der Anlage, mit einem kreisrunden Erdwall und einem Graben, wird auf etwa 3100 vor Christus datiert. Pfostenlöcher weisen darauf hin, dass im frühen dritten Jahrtausend v. Chr. eine hölzerne Struktur im Inneren der Einfassung existiert haben muss. Die auffällige Megalithstruktur wurde etwa zwischen 2500 v. Chr. und 2000 v. Chr. errichtet.",
+                "Die gesamte Anlage ist vermutlich deutlich älter als bisher angenommen. Demnach stand die Megalithstruktur bereits um 3000 vor Christus. Die weiteren Ausführungen im Artikel beziehen sich auf die bisher angenommene Datierung. Neueste Forschungen legen eine mindestens 11.000 Jahre lange Geschichte der Anlage nahe.",
+                "Die UNESCO erklärte Stonehenge im Jahr 1986 zum Weltkulturerbe.",
+                "Der Name Stonehenge stammt aus dem Altenglischen und bedeutet so viel wie 'hängende Steine'.",
+                "Der zweite Bestandteil des Namens, Henge, wird heute als archäologische Bezeichnung für eine Klasse jungsteinzeitlicher Bauwerke verwendet, die aus einer kreisförmigen, erhöhten Einfriedung mit einer innen liegenden Vertiefung bestehen.",
+                "Stonehenge gehört seit 1918 dem englischen Staat. Verwaltet und touristisch erschlossen wird Stonehenge vom English Heritage, seine Umgebung vom National Trust.",
+                "Die erste namentliche Erwähnung von Stonehenge liefert Henry von Huntingdon um das Jahr 1130 in seiner 'Geschichte Englands'.",
+                "Zwischenzeitlich bot ein Schmied des nahegelegenen Ortes Amesbury Touristen einen Hammer zum Verleih, die sich damit Stückchen von den Steinen als Souvenir abschlagen konnten.",
+                "Es gibt viele Spekulationen darüber, wie Stonehenge gebaut wurde. Schätzungen gehen davon aus, dass mehr als 20 Millionen Arbeitsstunden für Transport und Bearbeitung der Steine benötigt wurden.",
+                "Die auf den Sarsensteinen eingravierten Darstellungen von Waffen sind in der Megalith-Kunst auf den britischen Inseln einzigartig.",
+                "Stonehenge wird heute von Anhängern neuheidnischen Glaubens, darunter Druiden, religiös genutzt."
             ],
-            "SKILL_NAME" : "Weltraumwissen auf Deutsch",
-            "GET_FACT_MESSAGE" : "Hier sind deine Fakten: ",
-            "HELP_MESSAGE" : "Du kannst sagen, „Nenne mir einen Fakt über den Weltraum“, oder du kannst „Beenden“ sagen... Wie kann ich dir helfen?",
+            "SKILL_NAME" : "Wissen über Stonehenge.",
+            "GET_FACT_MESSAGE" : "Hier ist dein Fakt: ",
+            "HELP_MESSAGE" : "Du kannst sagen, 'Nenne mir einen Fakt über Stonehenge', oder du kannst 'Beenden' sagen.",
             "HELP_REPROMPT" : "Wie kann ich dir helfen?",
-            "STOP_MESSAGE" : "Auf Wiedersehen!"
+            "STOP_MESSAGE" : "Auf Wiedersehen!",
+            "UNHANDLED_MESSAGE": "Das verstehe ich leider nicht."
         }
     }
 };
 
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
-    alexa.APP_ID = APP_ID;
+    alexa.APP_ID = "amzn1.ask.skill.f308e73d-10a6-41e5-a81c-8a99bb65d8ab";
     // To enable string internationalization (i18n) features, set a resources object.
     alexa.resources = languageStrings;
     alexa.registerHandlers(handlers);
@@ -87,32 +45,32 @@ exports.handler = function(event, context, callback) {
 };
 
 var handlers = {
-    'LaunchRequest': function () {
-        this.emit('GetFact');
+    "LaunchRequest": function () {
+        this.emit("GetNewFactIntent");
     },
-    'GetNewFactIntent': function () {
-        this.emit('GetFact');
+     "StartIntent": function () {
+        this.emit("GetNewFactIntent");
     },
-    'GetFact': function () {
+    "GetNewFactIntent": function () {
         // Get a random space fact from the space facts list
         // Use this.t() to get corresponding language data
-        var factArr = this.t('FACTS');
+        var factArr = this.t("FACTS");
         var factIndex = Math.floor(Math.random() * factArr.length);
         var randomFact = factArr[factIndex];
 
         // Create speech output
         var speechOutput = this.t("GET_FACT_MESSAGE") + randomFact;
-        this.emit(':tellWithCard', speechOutput, this.t("SKILL_NAME"), randomFact)
+        this.emit(":tellWithCard", speechOutput, this.t("SKILL_NAME"), randomFact)
     },
-    'AMAZON.HelpIntent': function () {
+    "HelpIntent": function () {
         var speechOutput = this.t("HELP_MESSAGE");
         var reprompt = this.t("HELP_MESSAGE");
-        this.emit(':ask', speechOutput, reprompt);
+        this.emit(":ask", speechOutput, reprompt);
     },
-    'AMAZON.CancelIntent': function () {
-        this.emit(':tell', this.t("STOP_MESSAGE"));
+    "StopIntent": function () {
+        this.emit(":tell", this.t("STOP_MESSAGE"));
     },
-    'AMAZON.StopIntent': function () {
-        this.emit(':tell', this.t("STOP_MESSAGE"));
+    "Unhandled": function () {
+        this.emit(":tell", this.t("UNHANDLED_MESSAGE"));
     }
 };

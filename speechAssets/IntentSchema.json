@@ -1,16 +1,19 @@
 {
   "intents": [
     {
+      "intent": "StartIntent",
+      "slots": []
+    },
+    {
       "intent": "GetNewFactIntent"
     },
     {
-      "intent": "AMAZON.HelpIntent"
+      "intent": "StopIntent",
+      "slots": []
     },
     {
-      "intent": "AMAZON.StopIntent"
-    },
-    {
-      "intent": "AMAZON.CancelIntent"
+      "intent": "HelpIntent",
+      "slots": []
     }
   ]
 }
