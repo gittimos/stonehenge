@@ -12,6 +12,7 @@ GetNewFactIntent gib mir Informationen
 GetNewFactIntent gib mir Informationen über Stonehenge
 GetNewFactIntent sage mir etwas
 GetNewFactIntent erzähle mir etwas
+GetNewFactIntent erzähl mir etwas über stonehenge
 StartIntent Starte Stonehenge fakten
 StartIntent Beginne Stonehenge fakten
 StartIntent Öffne Stonehenge fakten
